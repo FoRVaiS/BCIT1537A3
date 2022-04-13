@@ -4,13 +4,13 @@
   "scripts": {
     "_build:html": "pug -o ./public ./src/client/index.pug --pretty",
     "_build:css": "sass --no-source-map ./src/client/styles/styles.scss:./public/styles/styles.css",
-    "_build:client-js": "tsc -p tsconfig.client.json --rootDir src/client --outDir ./public",
-    "_build:server-js": "tsc -p tsconfig.server.json --rootDir src/server --outDir ./build",
+    "_build:js:client": "tsc -p tsconfig.client.json --rootDir src/client --outDir ./public",
+    "_build:js:server": "tsc -p tsconfig.server.json --rootDir src/server --outDir ./build",
     "serve:dev": "nodemon -r dotenv/config -w build/ -w config/ ./build/index.js --ext js,json",
     "serve": "node -r dotenv/config ./build/index.js",
     "clean": "rimraf public/ build/",
-    "build:watch": "npm-run-all clean -p \"_build:* -- --watch\"",
-    "build": "npm-run-all clean -p _build:*",
+    "build:watch": "npm-run-all clean -p \"_build:** -- --watch\"",
+    "build": "npm-run-all clean -p _build:**",
     "start:dev": "npm run serve:dev",
     "start": "npm run serve"
   },
