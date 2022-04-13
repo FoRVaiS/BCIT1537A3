@@ -7,7 +7,7 @@
     "_build:js:client": "tsc -p tsconfig.client.json --rootDir src/client --outDir ./public",
     "_build:js:server": "tsc -p tsconfig.server.json --rootDir src/server --outDir ./build",
     "serve:dev": "nodemon -r dotenv/config -w build/ -w config/ ./build/index.js --ext js,json",
-    "serve": "node -r dotenv/config ./build/index.js",
+    "serve": "node ./build/index.js",
     "clean": "rimraf public/ build/",
     "build:watch": "npm-run-all clean -p \"_build:** -- --watch\"",
     "build": "npm-run-all clean -p _build:**",
