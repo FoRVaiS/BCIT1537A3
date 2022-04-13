@@ -1,0 +1,13 @@
+{
+    "server": {
+        "host": "HOST",
+        "port": "PORT"
+    },
+    "mongo": {
+        "database": "MONGO_DB",
+        "user": "MONGO_USER",
+        "password": "MONGO_PASS",
+        "host": "MONGO_HOST",
+        "port": "MONGO_PORT"
+    }
+}

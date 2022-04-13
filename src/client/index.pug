@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="./styles/styles.css")
+        title Comp1537 Assignment 3
+    body
+        .container
+            section.u-row.u-clearfix.u-display-flow-root(region="Queries")
+                .query(query-type="name")
+                    h2.query__header Find By Name
+                    div.query__form
+                        label(for="in-query-name-name") Name
+                        input#in-query-name-name(type="textbox" placeholder="Unicorn Name")
+
+                    input.query__submit(type="submit" value="Submit")
+
+                .query(query-type="weight")
+                    h2.query__header Find By Weight
+                    div.query__form
+                        label(for="in-query-weight-lower") Lowest Weight
+                        input#in-query-weight-lower(type="number" min=1 max=999 value=1)
+
+                    div.query__form
+                        label(for="in-query-weight-higher") Highest Weight
+                        input#in-query-weight-higher(type="number" min=1 max=999 value=1)
+
+                    input.query__submit(type="submit" value="Submit")
+
+                .query(query-type="foods")
+                    h2.query__header Find By Food
+
+                    div.query__form
+                        label(for="in-query-foods-apple") Apple
+                        input#in-query-foods-apple(type="checkbox" value="apple")
+
+                    div.query__form
+                        label(for="in-query-foods-carrot") Carrot
+                        input#in-query-foods-carrot(type="checkbox" value="carrot")
+
+                    input.query__submit(type="submit" value="Submit")
+
+            section.u-row.u-clearfix(region="Filters")
+                .filter
+                    h2.filter__header Filters
+                    div.filter__form
+                        label(for="in-filter-name") Name
+                        input#in-filter-name(type="checkbox" value="name")
+
+                    div.filter__form
+                        label(for="in-filter-weight") Weight
+                        input#in-filter-weight(type="checkbox" value="weight")
+
+                    input.filter__submit(type="submit" value="Apply")
+
+            section.u-row.u-clearfix(region="Results Area")
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+        script(src="./scripts/scripts.js")
