@@ -2,14 +2,17 @@
   "name": "comp1537a3",
   "type": "module",
   "scripts": {
-    "build:watch:html": "pug -o ./public ./src/client/index.pug --pretty --watch",
-    "build:watch:css": "sass --no-source-map ./src/client/styles/styles.scss:./public/styles/styles.css --watch",
-    "build:watch:client-js": "tsc -p tsconfig.client.json --rootDir src/client --outDir ./public --watch",
-    "build:watch:server-js": "tsc -p tsconfig.server.json --rootDir src/server --outDir ./build --watch",
-    "serve": "nodemon -r dotenv/config -w build/ -w config/ ./build/index.js --ext js,json",
+    "_build:html": "pug -o ./public ./src/client/index.pug --pretty",
+    "_build:css": "sass --no-source-map ./src/client/styles/styles.scss:./public/styles/styles.css",
+    "_build:client-js": "tsc -p tsconfig.client.json --rootDir src/client --outDir ./public",
+    "_build:server-js": "tsc -p tsconfig.server.json --rootDir src/server --outDir ./build",
+    "serve:dev": "nodemon -r dotenv/config -w build/ -w config/ ./build/index.js --ext js,json",
+    "serve": "node -r dotenv/config ./build/index.js",
     "clean": "rimraf public/ build/",
-    "build": "npm-run-all clean -p build:watch:*",
-    "start": "npm-run-all serve"
+    "build:watch": "npm-run-all clean -p \"_build:* -- --watch\"",
+    "build": "npm-run-all clean -p _build:*",
+    "start:dev": "npm run serve:dev",
+    "start": "npm run serve"
   },
   "devDependencies": {
     "@types/config": "^0.0.41",
