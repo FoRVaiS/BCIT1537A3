@@ -13,14 +13,13 @@ import { Post } from 'comp1537a3';
     const host = config.get<string>('server.host') ?? '0.0.0.0';
 
     const mongoHost = config.get<string>('mongo.host');
-    const mongoPort = config.get<string>('mongo.port');
     const mongoDb = config.get<string>('mongo.database');
     const mongoUser = config.get<string>('mongo.user');
     const mongoPass = config.get<string>('mongo.password');
 
     const webRoot = path.join(process.cwd(), 'public');
 
-    mongoose.connect(`mongodb://${mongoHost}:${mongoPort}/${mongoDb}`, {
+    mongoose.connect(`mongodb://${mongoHost}/${mongoDb}`, {
         user: mongoUser,
         pass: mongoPass,
     });
