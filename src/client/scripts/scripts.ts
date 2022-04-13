@@ -65,8 +65,6 @@
             .filter(ref => checkboxIsChecked(ref))
             .map(ref => ref.value);
 
-        console.log(foods);
-
         fetchQuery('/find/food', { foods }).then(handleResult).catch(console.error);
     };
 
