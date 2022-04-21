@@ -1,9 +1,0 @@
-{
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "target": "es2017",
-        "module": "None",
-        "esModuleInterop": false
-    },
-    "include": ["./src/client/scripts/**/*.ts"]
-}

@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  font-family: system-ui;
+  margin: 0;
+  padding: 0;
+}
+
+.u-row {
+  width: 100%;
+  padding-block: 32px;
+}
+
+.u-clearfix {
+  clear: both;
+}
+
+.u-display-flow-root {
+  display: flow-root;
+}
+
+.container {
+  width: 100%;
+  padding-inline: 32px;
+}
+
+.query, .filter {
+  width: 33.3333333%;
+  float: left;
+}
+.query__header, .filter__header {
+  padding-block: 8px;
+  margin-bottom: 16px;
+}
+.query__form, .filter__form {
+  padding-block: 8px;
+}
+.query__submit, .filter__submit {
+  margin-top: 16px;
+}
